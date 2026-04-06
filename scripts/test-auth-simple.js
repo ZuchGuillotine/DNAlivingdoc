@@ -23,7 +23,7 @@ console.log('4. Try logging in with test credentials');
 console.log('5. Check the Network tab for:');
 console.log('   - POST /api/login request');
 console.log('   - Look for Set-Cookie header in response');
-console.log('   - Check if stacktracker.sid cookie is set');
+console.log(`   - Check if ${(process.env.SESSION_COOKIE_NAME || 'dnaliving.sid')} cookie is set`);
 console.log('   - Verify subsequent /api/user requests include the cookie');
 
 console.log('\nFor Google OAuth:');

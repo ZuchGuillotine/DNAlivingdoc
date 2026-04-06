@@ -269,7 +269,7 @@ router.post('/api/logout', async (req: Request, res: Response, next: NextFunctio
     });
 
     // Step 3: Clear the cookie and send the response
-    res.clearCookie('stacktracker.sid', { path: '/' });
+    res.clearCookie(process.env.SESSION_COOKIE_NAME || 'dnaliving.sid', { path: '/' });
     console.log(`Cookie cleared for session ${sessionId}.`);
     res.status(200).json({ message: 'Logged out successfully' });
 

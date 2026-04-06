@@ -27,7 +27,10 @@ const replitHostname = process.env.REPLIT_HOSTNAME;
 
 let callbackUrl;
 if (process.env.NODE_ENV === 'production') {
-  callbackUrl = 'https://stacktracker.io/auth/google/callback';
+  const customDomain = process.env.CUSTOM_DOMAIN || process.env.APP_URL;
+  callbackUrl = customDomain
+    ? `${customDomain.replace(/\/$/, '')}/auth/google/callback`
+    : 'https://your-domain.example/auth/google/callback';
 } else if (replSlug && replOwner) {
   callbackUrl = `https://${replSlug}.${replOwner}.repl.co/auth/google/callback`;
 } else if (replitHostname) {

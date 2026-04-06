@@ -25,7 +25,7 @@ npm start
 | Environment | Frontend URL | API Server | Port |
 |------------|--------------|------------|------|
 | Development | http://localhost:5173 | http://localhost:3001 | Frontend: 5173<br>API: 3001 |
-| Production | https://stacktracker.io | Same origin | 8080 |
+| Production | `CUSTOM_DOMAIN` or deployed app URL | Same origin | 8080 |
 
 ## ⚠️ Critical Rules
 

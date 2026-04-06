@@ -38,4 +38,4 @@ RUN chmod 644 /app/certs/*.pem 2>/dev/null || echo "Certificate files not found,
 EXPOSE 8080
 
 # Use startup.js as the entry point (built from startup.ts)
-CMD ["sh", "-c", "echo 'Starting StackTracker application...' && echo 'NODE_ENV:' $NODE_ENV && echo 'PORT:' $PORT && node dist/server/startup.js"]
+CMD ["sh", "-c", "echo 'Starting DNAlivingdoc application...' && echo 'NODE_ENV:' $NODE_ENV && echo 'PORT:' $PORT && node dist/server/startup.js"]

@@ -38,7 +38,7 @@ export function setupAuthentication(app: Express): void {
   // 1. Session middleware with memory store
   app.use(session({
     secret: process.env.SESSION_SECRET || 'dev-secret-change-this',
-    name: 'stacktracker.sid',
+    name: process.env.SESSION_COOKIE_NAME || 'dnaliving.sid',
     resave: false,
     saveUninitialized: false,
     cookie: {

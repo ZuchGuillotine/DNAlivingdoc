@@ -112,16 +112,12 @@ async function initializeAndStart() {
           return callback(null, true);
         }
         
-        // Allow the custom domain explicitly - handle both www and non-www
-        if (origin === 'https://stacktracker.io' || 
-            origin === 'https://www.stacktracker.io' ||
-            origin === 'http://stacktracker.io' ||
-            origin === 'http://www.stacktracker.io') {
-          return callback(null, true);
-        }
-        
-        // Allow the custom domain via environment variable (for flexibility)
-        if (process.env.CUSTOM_DOMAIN && origin.includes(process.env.CUSTOM_DOMAIN.replace(/^https?:\/\//, ''))) {
+        // Allow configured custom domains via environment variables.
+        const configuredDomains = [process.env.CUSTOM_DOMAIN, process.env.APP_URL]
+          .filter(Boolean)
+          .map((value) => value!.replace(/^https?:\/\//, '').replace(/\/$/, ''));
+
+        if (configuredDomains.some((domain) => origin.includes(domain))) {
           return callback(null, true);
         }
         

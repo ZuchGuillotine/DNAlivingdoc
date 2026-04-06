@@ -36,7 +36,7 @@ Your application uses environment variables to configure Google OAuth. These var
 
 -   `GOOGLE_CLIENT_ID_PROD`: Your Google OAuth client ID for production.
 -   `GOOGLE_CLIENT_SECRET_PROD`: Your Google OAuth client secret for production.
--   `CUSTOM_DOMAIN`: Your application's custom domain name (e.g., `stacktracker.io`). This is used to construct the production callback URL.
+-   `CUSTOM_DOMAIN`: Your application's custom domain name (for example, `app.example.com`). This is used to construct the production callback URL.
 -   `NODE_ENV`: Set to `production` in your production environment.
 
 ## 3. Deployment

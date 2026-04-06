@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document provides a comprehensive guide to the development and production environment configurations for the StackTracker application. Understanding these configurations is crucial for maintaining deployment stability and preventing configuration-related issues.
+This document provides a comprehensive guide to the development and production environment configurations for the DNAlivingdoc application. Understanding these configurations is crucial for maintaining deployment stability and preventing configuration-related issues.
 
 ## Environment Architecture
 

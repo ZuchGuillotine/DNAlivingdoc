@@ -28,4 +28,4 @@ console.log('1. Start server with: NODE_ENV=development npm run dev');
 console.log('2. Go to http://localhost:5173/auth');
 console.log('3. Login - you should stay logged in');
 console.log('4. Check DevTools > Application > Cookies');
-console.log('   You should see stacktracker.sid cookie'); 
+console.log(`   You should see ${(process.env.SESSION_COOKIE_NAME || 'dnaliving.sid')} cookie`); 

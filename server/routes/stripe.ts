@@ -22,9 +22,10 @@ const router = Router();
 // Allow custom domain and Replit domain
 router.use((req, res, next) => {
   const allowedOrigins = [
-    'https://stacktracker.io',
-    process.env.REPLIT_URL || 'https://stacktracker.replit.app'
-  ];
+    process.env.CUSTOM_DOMAIN,
+    process.env.APP_URL,
+    process.env.REPLIT_URL,
+  ].filter(Boolean);
   
   const origin = req.headers.origin;
   if (origin && allowedOrigins.includes(origin)) {
