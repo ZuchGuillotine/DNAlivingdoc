@@ -1,0 +1,45 @@
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gzsendgrid.env
+.env
+certs
+
+# Elastic Beanstalk configuration files (contain sensitive infrastructure details)
+.elasticbeanstalk/
+.ebextensions/
+
+
+# Log files that may contain sensitive information
+*.log
+logs/
+
+# Backup and temporary files
+*.backup
+*.bak
+backups/
+backup_config/
+package.json.backup
+change-batch.json
+cookies.txt
+
+# Session and temporary files
+.sessions/
+debug_logs/
+coverage/
+uploads/
+attached_assets/
+infra/cdk.out/
+
+# Certificate and security files
+certs/
+*.pem
+*.key
+*.crt
+
+# Environment and configuration files
+.env*
+*.env
+config/

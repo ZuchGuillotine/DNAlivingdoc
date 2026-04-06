@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Background Word Animation Styles */
+.background-words-container {
+  @apply fixed overflow-hidden pointer-events-none;
+  top: 4rem; /* Start below header height */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: calc(100vh - 4rem); /* Adjust for header height */
+  z-index: 0;
+}
+
+.word-row {
+  @apply relative w-full;
+  height: 8vh;
+  margin: 1vh 0;
+}
+
+.word-line {
+  @apply absolute whitespace-nowrap opacity-20 text-primary/80;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  width: max-content;
+}
+
+.word-line.right-to-left {
+  animation-name: scrollRightToLeft;
+  animation-duration: 120s; /* Doubled duration for slower movement */
+}
+
+.word-line.left-to-right {
+  animation-name: scrollLeftToRight;
+  animation-duration: 120s; /* Doubled duration for slower movement */
+}
+
+.word-line.large {
+  @apply text-2xl;
+}
+
+.word-line.medium {
+  @apply text-xl;
+}
+
+.word-line.small {
+  @apply text-lg;
+}
+
+@keyframes scrollRightToLeft {
+  from {
+    transform: translateX(200vw); /* Start further right */
+  }
+  to {
+    transform: translateX(-200%); /* End further left */
+  }
+}
+
+@keyframes scrollLeftToRight {
+  from {
+    transform: translateX(-200%); /* Start further left */
+  }
+  to {
+    transform: translateX(200vw); /* End further right */
+  }
+}
+
+/* Mobile Responsive Card */
+@media (max-width: 640px) {
+  .auth-card {
+    @apply w-[90%] max-w-[320px] scale-90 transform;
+    margin: -2rem auto;
+  }
+}
